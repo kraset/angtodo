@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angtodo1
+spec:
+  selector:
+    matchLabels:
+      app: angtodo1
+  replicas: 1
+  revisionHistoryLimit: 1
+  template:
+    metadata:
+      labels:
+        app: angtodo1
+    spec:
+      containers:
+      - name: angtodo1
+        image: chaacr.azurecr.io/angtodo1:#{Build.BuildId}#
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: angtodo1
+spec:
+  ports:
+  - name: http-port
+    port: 80
+    targetPort: 80
+  selector:
+    app: angtodo1
+  type: LoadBalancer
