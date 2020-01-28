@@ -12,4 +12,8 @@ export class TodoAddComponent implements OnInit {
   ngOnInit() {
   }
 
+  onAddItem(name: string, description: string){
+    console.log(name + " " + description);
+  }
+  
 }
