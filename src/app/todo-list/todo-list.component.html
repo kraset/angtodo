@@ -1,1 +1,7 @@
-<p>todo-list works!</p>
+<div class="col-md-12">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let task of tasks">
+            <app-todo-item [task]="task"></app-todo-item>
+        </li>
+      </ul>    
+</div>
