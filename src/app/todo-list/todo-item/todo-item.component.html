@@ -1,1 +1,16 @@
-<p>todo-item works!</p>
+<div class="row">
+
+<div class="col-md-8">
+    <p>{{task.name}}: {{task.description}}</p>
+</div>
+<div class="col-md-4 pull-right">
+    <button 
+        class="btn btn-success btn-sm" 
+        type="button" 
+        (click)="onDone(inputName.value, inputDescription.value)"
+        >Mark as Done
+    </button>
+    <button class="btn btn-primary btn-sm" type="button">Edit</button>
+    <button class="btn btn-danger btn-sm" type="button">Delete</button>
+</div>
+</div>

@@ -1,5 +1,4 @@
 
-
 <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -9,7 +8,13 @@
   <hr>
   <div class="row">
     <div class="col-md-12">
-      <app-todo-add></app-todo-add>
+      <app-todo-add (addedTask)="onTaskAdded($event)"></app-todo-add>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-12">
+      <app-todo-list [tasks] = "tasks"></app-todo-list>
     </div>
   </div>
 </div>

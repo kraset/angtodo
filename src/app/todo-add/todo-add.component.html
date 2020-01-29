@@ -1,25 +1,27 @@
 <div class="row">
-    <div class="col-xs-12">
+    <div class="col-md-12">
+    <h2>Add New Task</h2>
+    </div>
+    <div class="col-md-12">
         <form>
             <div class="row">
-                <div class="col-sm-4 form-group">
+                <div class="col-md-3 form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" class="form-control" #inputName>
                 </div>
-                <div class="col-sm-7 form-group">
+                <div class="col-md-7 form-group">
                     <label for="description">Description</label>
                     <input type="text" id="description" class="form-control" #inputDescription>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
+                <div class="col-md-2 form-group" >
+                    <label for="description">Press a button</label>
                     <button 
-                        class="btn btn-success" 
+                        class="btn btn-success btn-sm" 
                         type="button" 
                         (click)="onAddItem(inputName.value, inputDescription.value)"
-                        >Add Item</button>
-                    <button class="btn btn-danger" type="button">Delete</button>
-                    <button class="btn btn-primary" type="button">Clear</button>
+                        >Done Editing
+                    </button>
+                    <button class="btn btn-danger btn-sm" type="button">Clear</button>
                 </div>
             </div>
         </form>
