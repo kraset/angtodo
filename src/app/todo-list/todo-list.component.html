@@ -1,7 +1,16 @@
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        List of Tasks
+    </div>
+
+        <div class="panel-body">
+
 <div class="col-md-12">
     <ul class="list-group">
         <li class="list-group-item" *ngFor="let task of tasks">
-            <app-todo-item [task]="task"></app-todo-item>
+            <app-todo-item [task]="task" (onTaskAction)="onTaskAction($event)"></app-todo-item>
         </li>
       </ul>    
+</div>
+</div>
 </div>

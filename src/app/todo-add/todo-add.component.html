@@ -1,27 +1,22 @@
-<div class="row">
-    <div class="col-md-12">
-    <h2>Add New Task</h2>
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3>Add New Task</h3>
     </div>
-    <div class="col-md-12">
+    <div class="panel-body">
         <form>
             <div class="row">
                 <div class="col-md-3 form-group">
                     <label for="name">Name</label>
-                    <input type="text" id="name" class="form-control" #inputName>
+                    <input type="text" [(ngModel)]="name" name="name" class="form-control" #inputName>
                 </div>
                 <div class="col-md-7 form-group">
                     <label for="description">Description</label>
-                    <input type="text" id="description" class="form-control" #inputDescription>
+                    <input type="text" [(ngModel)]="description" name="desc" class="form-control" #inputDescription>
                 </div>
                 <div class="col-md-2 form-group" >
                     <label for="description">Press a button</label>
-                    <button 
-                        class="btn btn-success btn-sm" 
-                        type="button" 
-                        (click)="onAddItem(inputName.value, inputDescription.value)"
-                        >Done Editing
-                    </button>
-                    <button class="btn btn-danger btn-sm" type="button">Clear</button>
+                    <button class="btn btn-success btn-sm" type="button" (click)="onAddItem()">Add Item</button>
+                    <button class="btn btn-danger btn-sm" type="button" (click)="onClear()">Clear</button>
                 </div>
             </div>
         </form>

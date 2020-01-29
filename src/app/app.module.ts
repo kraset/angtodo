@@ -7,6 +7,8 @@ import { TodoAddComponent } from './todo-add/todo-add.component';
 import { TodoItemComponent } from './todo-list/todo-item/todo-item.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { HeaderComponent } from './header/header.component';
+import { TodoEditComponent } from './todo-edit/todo-edit.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { HeaderComponent } from './header/header.component';
     TodoAddComponent,
     TodoItemComponent,
     TodoListComponent,
-    HeaderComponent
+    HeaderComponent,
+    TodoEditComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

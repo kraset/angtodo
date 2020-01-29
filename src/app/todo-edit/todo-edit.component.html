@@ -1,0 +1,21 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3>Edit Task with id: {{task.id}}</h3>
+    </div>
+    <div class="panel-body">
+        <form>
+            <div class="col-md-3 form-group">
+                <label for="name">Name</label>
+                <input [(ngModel)]="task.name" type="text" name="first" class="form-control" #inputName>
+            </div>
+            <div class="col-md-7 form-group">
+                <label for="description">Description</label>
+                <input [(ngModel)]="task.description" type="text" name="description" class="form-control" #inputDescription>
+            </div>
+            <div class="col-md-2 form-group" >
+                <label for="description">Press a button</label>
+                <button class="btn btn-primary btn-sm" type="button" (click)="onEditDone()">Done Editing</button>
+            </div>
+        </form>
+    </div>
+</div>

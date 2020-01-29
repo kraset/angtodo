@@ -9,15 +9,24 @@ import { Todo } from '../model/todo.model';
 export class TodoAddComponent implements OnInit {
 
   @Output() addedTask = new EventEmitter<Todo>();
+  
+  name: string;
+  description: string;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onAddItem(name: string, description: string){
-    console.log(name + " " + description);
-    this.addedTask.emit(new Todo(name, description));
+  onAddItem(){
+    //console.log(name + " " + description);
+    this.addedTask.emit(new Todo(this.name, this.description));
+    this.onClear();
+  }
+
+  onClear(){
+    this.name ="";
+    this.description = "";
   }
   
 }

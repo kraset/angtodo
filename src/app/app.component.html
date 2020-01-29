@@ -1,20 +1,18 @@
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
+  <div class="col-md-12">
+    <div class="row">
       <app-header></app-header>
     </div>
-  </div>
   <hr>
   <div class="row">
-    <div class="col-md-12">
-      <app-todo-add (addedTask)="onTaskAdded($event)"></app-todo-add>
-    </div>
+      <app-todo-add *ngIf="isAddVisible()" (addedTask)="onTaskAdded($event)"></app-todo-add>
   </div>
-  <hr>
   <div class="row">
-    <div class="col-md-12">
-      <app-todo-list [tasks] = "tasks"></app-todo-list>
+      <app-todo-edit *ngIf="!isAddVisible()" [task]="selectedTask" (editDoneEvent)="onEditDoneEvent()"></app-todo-edit>
     </div>
+  <div class="row">
+      <app-todo-list *ngIf="isAddVisible()" [tasks] = "tasks" (taskActionEvent)="onTaskAction($event)"></app-todo-list>
   </div>
+</div>
 </div>
